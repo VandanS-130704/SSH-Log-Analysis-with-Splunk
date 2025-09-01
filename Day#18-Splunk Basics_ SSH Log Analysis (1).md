@@ -3,9 +3,9 @@
 ## 🎯 Objective
 
 In this project, I:
-Learned how to ingest and analyze SSH logs using Splunk.
-Detected failed and successful SSH authentication attempts.
-Identified unusual SSH activity that may indicate brute-force or unauthorized access.
+1. Learned how to ingest and analyze SSH logs using Splunk.
+2. Detected failed and successful SSH authentication attempts.
+3. Identified unusual SSH activity that may indicate brute-force or unauthorized access.
 
 ---
 
