@@ -1,13 +1,11 @@
-# Day#18: Splunk Basics – SSH Log Analysis
-
 ---
 
 ## 🎯 Objective
 
-In this lab, you will:
-- Learn how to ingest and analyze SSH logs using Splunk.
-- Detect failed and successful SSH authentication attempts.
-- Identify unusual SSH activity that may indicate brute force or unauthorized access.
+In this project, I:
+- Learned how to ingest and analyze SSH logs using Splunk.
+- Detected failed and successful SSH authentication attempts.
+- Identified unusual SSH activity that may indicate brute-force or unauthorized access.
 
 ---
 
@@ -31,31 +29,25 @@ In this lab, you will:
 
 ---
 
-## 🔍 Lab Tasks
+## 🔍 Project Tasks
 
-Use SPL queries to complete the following analysis:
+Used SPL queries to complete the following analysis:
 
-### ✅Task 1: List the top 10 endpoints with failed SSH login attempts
+### ✅Task 1: Listed the top 10 endpoints with failed SSH login attempts
 ```spl
 index=ssh_lab sourcetype="json" auth_success=false
 | stats count by "id.orig_h"
 | sort -count
 | head 10
 ```
-### ✅Task 2: Find the number of total SSH connections
+### ✅Task 2: Found the number of total SSH connections
 ```spl
 index=ssh_lab sourcetype="json"
 | stats count as total_ssh_connections
 ```
-### ✅Task 3: Count all event types (successful, failed, no-auth, multiple-failed) seen in the logs
+### ✅Task 3: Counted all event types (successful, failed, no-auth, multiple-failed) seen in the logs
 ```spl
 index=ssh_lab sourcetype="json"
 | stats count by event_type
 ```
-
-## 📸Submission
-Submit a screenshot for each of the following:
-- Your query and result for Task 1.
-- Your query and result for Task 2.
-- Your query and result for Task 3.
 
