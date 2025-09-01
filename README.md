@@ -1,6 +1,6 @@
---# SSH-Log-Analysis-with-Splunk
---
---## 🎯 Objective
+# SSH-Log-Analysis-with-Splunk
+
+# 🎯 Objective
 
 In this project, I:
 1. Learned how to ingest and analyze SSH logs using Splunk.
