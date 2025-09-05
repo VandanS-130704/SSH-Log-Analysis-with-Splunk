@@ -15,7 +15,7 @@ In this project, I:
 - ✅ **Data Source**: JSON-formatted Zeek-style SSH logs.
 - 🌐 **Log File**: Download and upload to Splunk using the steps below.
 
-📥 **[Download SSH Log file](https://raw.githubusercontent.com/0xrajneesh/30-Days-SOC-Challenge-Beginner/refs/heads/main/ssh_logs.json)**
+📥 **[Download SSH Log file](https://drive.google.com/file/d/1-KEqITwCOoQSRS3SfnPk-bbwdnOfFNsB/view?usp=sharing)**
 
 ---
 
@@ -35,18 +35,18 @@ Used SPL queries to complete the following analysis:
 
 ### ✅Task 1: Listed the top 10 endpoints with failed SSH login attempts
 ```spl
-index=ssh_lab sourcetype="json" auth_success=false
+index="main" source="ssh_logs.json" auth_success=false
 | stats count by "id.orig_h"
 | sort -count
 | head 10
 ```
 ### ✅Task 2: Found the number of total SSH connections
 ```spl
-index=ssh_lab sourcetype="json"
+index="main" source="ssh_logs.json"
 | stats count as total_ssh_connections
 ```
 ### ✅Task 3: Counted all event types (successful, failed, no-auth, multiple-failed) seen in the logs
 ```spl
-index=ssh_lab sourcetype="json"
+index="main" source="ssh_logs.json"
 | stats count by event_type
 ```
